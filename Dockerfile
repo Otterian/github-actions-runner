@@ -13,7 +13,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     sudo=1.8.* \
     lsb-release=11.1.* \
-    software-properties-common=0.98.* \
+    software-properties-common \
     gnupg-agent=2.2.* \
     openssh-client=1:8.* \
     make=4.*\
@@ -30,7 +30,7 @@ RUN echo "runner ALL= EXEC: NOPASSWD:ALL" >> /etc/sudoers.d/runner
 # Update git.
 RUN add-apt-repository -y ppa:git-core/ppa && \
     apt-get update && \
-    apt-get -y install --no-install-recommends git=1:2.33.* && \
+    apt-get -y install --no-install-recommends git=1:2.34.* && \
     apt-get -y clean && \
     rm -rf /var/cache/apt /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
